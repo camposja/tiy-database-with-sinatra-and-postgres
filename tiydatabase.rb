@@ -8,23 +8,16 @@ get '/' do
   erb :home
 end
 
-get '/database' do
-  database = PG.connect(dbname: "tiy-database")
-
-  erb :database
-end
-
 get '/addpeep' do
   addemployee_db = PG.connect(dbname: "tiy-database")
 
   erb :addpeep
 end
 
-get '/database' do
+get '/employees' do
   database = PG.connect(dbname:"tiy-database")
 
-  id = params["id"]
+  @employees = database.exec("select * from employees")
 
-  @employees = database.exec("select * from employees where id = $1", [id])
-  erb :database
+  erb :employees
 end

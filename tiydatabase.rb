@@ -14,6 +14,17 @@ get '/database' do
   erb :database
 end
 
-get '/bruno' do
-  "yesy"
+get '/addpeep' do
+  addemployee_db = PG.connect(dbname: "tiy-database")
+
+  erb :addpeep
+end
+
+get '/database' do
+  database = PG.connect(dbname:"tiy-database")
+
+  id = params["id"]
+
+  @employees = database.exec("select * from employees where id = $1", [id])
+  erb :database
 end

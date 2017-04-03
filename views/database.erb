@@ -38,7 +38,6 @@
               <td>
                 <h4>Address</h4>
               </td>
-
               <td>
                 <h4>Position</h4>
               </td>
@@ -52,16 +51,6 @@
                 <h4>GitHub Handle</h4>
               </td>
             </tr>
-
-              <tr>
-                <td>mark</td>
-                <td>45</td>
-                <td>45</td>
-                <td>instructor</td>
-                <td>0</td>
-                <td>df</td>
-                <td>df</td>
-              </tr>
 
               <tr>
                 <td>gavin</td>
@@ -93,36 +82,17 @@
                 <td>octocat</td>
               </tr>
 
-              <tr>
-                <td>holly</td>
-                <td>4567</td>
-                <td>9876 oak road</td>
-                <td>instructor</td>
-                <td>0</td>
-                <td>hollyholly</td>
-                <td>gitgit</td>
-              </tr>
-
-              <tr>
-                <td>johnnieW</td>
-                <td>4556</td>
-                <td>yupyup</td>
-                <td>instructor</td>
-                <td>0</td>
-                <td>coolslack</td>
-                <td>spacecat</td>
-              </tr>
-
-              <tr>
-                <td>Ian</td>
-                <td>3456</td>
-                <td>6164 summer haven</td>
-                <td>student</td>
-                <td>0</td>
-                <td>slacker</td>
-                <td>octocatsea</td>
-              </tr>
-
+              <% @employees.each do |employee| %>
+                <tr>
+                  <td><a href="/show_info?id=<%= employee['id'] %>"><%= employee["name"] %></a></td>
+                  <td><%= employee["phone"] %></td>
+                  <td><%= employee["address"]%></td>
+                  <td><%= employee["position"]%></td>
+                  <td><%= employee["salary"] %></td>
+                  <td><%= employee["slack"]%></td>
+                  <td><%= employee["github"]%></td>
+                </tr>
+              <% end %>
 
           </tbody>
         </table>

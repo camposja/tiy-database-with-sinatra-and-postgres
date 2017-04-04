@@ -53,6 +53,7 @@
               <td>
                 <h4>GitHub Handle</h4>
               </td>
+              <td></td>
             </tr>
             <tr>
               <td><%= @employee["id"] %></td>
@@ -63,6 +64,8 @@
               <td><%= @employee["salary"] %></td>
               <td><%= @employee["slack"]%></td>
               <td><%= @employee["github"]%></td>
+              <td><a class="btn btn-warning btn-sm" href="/editpeep?id=<%= @employee["id"] %>" role="button">Edit</a></td>
+
             </tr>
           </tbody>
         </table>

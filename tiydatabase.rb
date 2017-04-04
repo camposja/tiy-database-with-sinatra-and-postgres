@@ -59,3 +59,36 @@ get '/delete' do
 
   redirect('/employees')
 end
+
+get '/editpeep' do
+  database = PG.connect(dbname: "tiy-database")
+
+  id = params["id"]
+
+  employees = database.exec("select * from employees where id =$1", [id])
+
+  @employee = employees.first
+
+  erb :editpeep
+end
+
+get '/updatepeep' do
+  database = PG.connect(dbname: "tiy-database")
+
+  id       = params["id"]
+  name     = params["name"]
+  phone    = params["phone"]
+  address  = params["address"]
+  position = params["position"]
+  salary   = params["salary"]
+  github   = params["github"]
+  slack    = params["slack"]
+
+  database.exec("UPDATE employees SET name = $1, phone = $2, address = $3, position = $4, salary = $5, github = $6, slack =$7 WHERE id = $8;", [name, phone, address, position, salary, github, slack, id])
+
+  employees = database.exec("select * from employees where id = $1", [id])
+
+  @employee = employees.first
+
+  erb :employees
+end

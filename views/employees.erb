@@ -50,27 +50,20 @@
               <td>
                 <h4>GitHub Handle</h4>
               </td>
+              <td></td>
             </tr>
 
-              <tr>
-                <td>gavin</td>
-                <td>345</td>
-                <td>663</td>
-                <td>campus director</td>
-                <td>0</td>
-                <td>feew</td>
-                <td>oijefew</td>
-              </tr>
               <% @employees.each do |employee| %>
                 <% employee["id"] %>
                 <tr>
-                  <td><a href="#"><%= employee["name"] %></a></td>
+                  <td><a href=""><%= employee["name"] %></a></td>
                   <td><%= employee["phone"] %></td>
                   <td><%= employee["address"]%></td>
                   <td><%= employee["position"]%></td>
                   <td><%= employee["salary"] %></td>
                   <td><%= employee["slack"]%></td>
                   <td><%= employee["github"]%></td>
+                  <td><a class="btn btn-warning btn-sm" href="/delete?id=<%= employee["id"] %>" role="button">Delete</a></td>
                 </tr>
               <% end %>
           </tbody>

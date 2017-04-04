@@ -52,18 +52,18 @@
               </td>
             </tr>
 
-              <% @employees["id"] %>
+              <%= employee["id"] %>
+                <% employee["id"] %>
                 <tr>
-                  <td><a href="#"><%= @employee["name"] %></a></td>
-                  <td><%= @employee["phone"] %></td>
-                  <td><%= @employee["address"]%></td>
-                  <td><%= @employee["position"]%></td>
-                  <td><%= @employee["salary"] %></td>
-                  <td><%= @employee["slack"]%></td>
-                  <td><%= @employee["github"]%></td>
+                  <td><a href=""><%= employee["name"] %></a></td>
+                  <td><%= employee["phone"] %></td>
+                  <td><%= employee["address"]%></td>
+                  <td><%= employee["position"]%></td>
+                  <td><%= employee["salary"] %></td>
+                  <td><%= employee["slack"]%></td>
+                  <td><%= employee["github"]%></td>
                 </tr>
               <% end %>
-
           </tbody>
         </table>
       </div>

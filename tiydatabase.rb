@@ -37,7 +37,7 @@ get '/employees' do
   erb :employees
 end
 
-get 'displaypeep' do
+get '/displaypeep' do
   database = PG.connect(dbname: "tiy-database")
 
   id = params["id"]
@@ -46,7 +46,7 @@ get 'displaypeep' do
 
   @employee = employees.first
   # if
-    erb :displaypeep
+  erb :displaypeep
   # end
 end
 

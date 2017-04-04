@@ -30,6 +30,9 @@
           <tbody>
             <tr>
               <td>
+                <h4>ID#</h4>
+              </td>
+              <td>
                 <h4>Name</h4>
               </td>
               <td>
@@ -51,19 +54,16 @@
                 <h4>GitHub Handle</h4>
               </td>
             </tr>
-
-              <%= employee["id"] %>
-                <% employee["id"] %>
-                <tr>
-                  <td><a href=""><%= employee["name"] %></a></td>
-                  <td><%= employee["phone"] %></td>
-                  <td><%= employee["address"]%></td>
-                  <td><%= employee["position"]%></td>
-                  <td><%= employee["salary"] %></td>
-                  <td><%= employee["slack"]%></td>
-                  <td><%= employee["github"]%></td>
-                </tr>
-              <% end %>
+            <tr>
+              <td><%= @employee["id"] %></td>
+              <td><a href=""><%= @employee["name"] %></a></td>
+              <td><%= @employee["phone"] %></td>
+              <td><%= @employee["address"]%></td>
+              <td><%= @employee["position"]%></td>
+              <td><%= @employee["salary"] %></td>
+              <td><%= @employee["slack"]%></td>
+              <td><%= @employee["github"]%></td>
+            </tr>
           </tbody>
         </table>
       </div>

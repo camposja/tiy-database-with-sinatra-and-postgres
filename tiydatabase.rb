@@ -92,3 +92,12 @@ get '/updatepeep' do
 
   erb :employees
 end
+get '/search' do
+  database = PG.connect(dbname: "tiy-database")
+
+  search = params["search"]
+
+  @employees = database.exec("select * from employees where name like $1 or github=$2 or slack=$3", ["%#{search}%", search, search])
+
+  erb :search
+end

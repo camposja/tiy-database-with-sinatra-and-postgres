@@ -2,7 +2,8 @@ require 'sinatra'
 require 'pg'
 require 'ap'
 
-require 'sinatra/reloader' if development?
+# TODO: sinatra reloader not needed after sinatra upgrade
+# require 'sinatra/reloader' if development?
 
 get '/' do
   erb :home
